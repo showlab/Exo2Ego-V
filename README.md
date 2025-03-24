@@ -48,19 +48,19 @@ python scripts_preprocess/get_ego_intrinsics.py
 
 ### Training
 **Stage 1: Train Exo2Ego Spatial Appearance Generation.**
-Please modify the data and pretrained model weights directory in configs/train/stage1_scenario.yaml
+Please modify the data and pretrained model weights directory in configs/train/stage1.yaml
 ```bash
 bash train_stage1.sh
 ```
 
 **Stage 2: Train Exo2Ego Temporal Motion Video Generation.** 
-Please modify the data, pretrained model weights, and stage 1 model weights directory in configs/train/stage2_scenario.yaml
+Please modify the data, pretrained model weights, and stage 1 model weights directory in configs/train/stage2.yaml
 ```bash
 bash train_stage2.sh
 ```
 
 ### Checkpoints
-We release the 6 Pretrained Exo2Ego View Translation Prior checkpoints on [link](https://drive.google.com/drive/folders/1ha9cdVl1P0kSOIi0fqfImZI54sjd1dNJ?usp=sharing).
+We release the 5 Pretrained Exo2Ego View Translation Prior checkpoints on [link](https://drive.google.com/drive/folders/1ha9cdVl1P0kSOIi0fqfImZI54sjd1dNJ?usp=sharing).
 
 ## 🎓 Citation
 
