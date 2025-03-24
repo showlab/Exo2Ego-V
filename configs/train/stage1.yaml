@@ -1,0 +1,84 @@
+data:
+  train_bs: 1
+
+solver:
+  gradient_accumulation_steps: 1
+  mixed_precision: 'fp16'
+  enable_xformers_memory_efficient_attention: True 
+  gradient_checkpointing: False
+  max_train_steps: 250000
+  max_grad_norm: 1.0
+  scale_lr: False 
+  lr_warmup_steps: 1
+  lr_scheduler: 'constant'
+
+  # optimizer
+  use_8bit_adam: False 
+  adam_beta1: 0.9
+  adam_beta2: 0.999
+  adam_weight_decay:  1.0e-2
+  adam_epsilon: 1.0e-8
+
+val:
+  validation_steps: 200
+
+noise_scheduler_kwargs:
+  num_train_timesteps: 1000
+  beta_start:          0.00085
+  beta_end:            0.012
+  beta_schedule:       "scaled_linear"
+  steps_offset:        1
+  clip_sample:         False
+
+base_model_path: './pretrained_weights/stable-diffusion-v1-5'
+vae_model_path: './pretrained_weights/sd-vae-ft-mse'
+image_encoder_path: './pretrained_weights/image_encoder'
+
+weight_dtype: 'fp16'  # [fp16, fp32]
+uncond_ratio: 0.1
+noise_offset: 0.05
+snr_gamma: 5.0
+enable_zero_snr: True 
+
+seed: 12580
+resume_from_checkpoint: "latest"
+checkpointing_steps: 10000
+save_model_epoch_interval: 5
+exp_name: "Experimentation Name"
+output_dir: "Output Directory"
+
+per_gpu_batch_size: 1
+checkpoints_total_limit: 5
+lr_warmup_steps: 0
+dtype: "bf16"
+mixed_precision: "fp16"
+
+base_dir: "Data Folder"
+train_dict: "Train Set Dict"
+test_dict: "Test Set Dict"
+pose_dir: "Processed Pose Directory"
+validation_steps: 200
+num_frames: 1
+cross_multi: True
+add_ego_noise: False
+conf: "./ego.conf"
+use_pixelnerf: True
+ego_width: 256
+ego_height: 256
+exo_width: 480
+exo_height: 270
+nerf_path: "Pretrained Exo2Ego View Translation Prior Directory"
+name: "test_32_4_feature"
+nviews: "4"
+use_fishereye: True
+simple_mlp: True
+freeze_enc: True
+
+render_whole: True
+ray_batch_size: 1024
+learning_rate: 0.00001
+nerf_learning_rate: 0.0001
+only_nerf_training: 2
+
+exo_cropped_width: 384
+exo_cropped_height: 256
