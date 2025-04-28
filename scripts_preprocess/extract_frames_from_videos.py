@@ -1,5 +1,4 @@
 import json
-import pdb
 import cv2
 import os
 import shutil
@@ -82,7 +81,6 @@ names_noaction = []
 for name in names:
     if name not in names_action:
         names_noaction.append(name)
-pdb.set_trace()
 
 for key,datas in segments.items():
     print(key)
