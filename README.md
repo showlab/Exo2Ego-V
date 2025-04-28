@@ -37,7 +37,7 @@ Please modify the data and output directory in each script.
 python scripts_preprocess/extract_frames_from_videos.py
 ```
 ### Data Processing -- Camera Poses
-Please modify the data, input, and output directory in each script.
+Please modify the data, input, and output directory in each script. The "train_dict" and "test_dict" are the train and test split dictionary: [link](https://drive.google.com/drive/folders/1fpNW8VwY354kYpt2ATtyovbSWgDmZ4DA?usp=sharing).
 ```shell
 python scripts_preprocess/get_ego_pose.py
 python scripts_preprocess/get_exo_pose.py
